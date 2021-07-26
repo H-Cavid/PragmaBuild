@@ -1,0 +1,132 @@
+
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+<!--Kecid-->
+<section class="breadcrumbs-section">
+    <div class="container pl-3 p-sm-3">
+        <div class="row">
+            <div class="col-12">
+                <h2>Bizimlə Əlaqə</h2>
+                <ol class="breadcumb">
+                    <li class="breadcrumb-item"><a href="">Ana Səhifə</a></li>
+                    <li class="breadcrumb-item"><a href=""></a>Bizimlə Əlaqə</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Kecidin sonu-->
+<!--Formun ustu-->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p>Bizimlə Əlaqə Saxlayın</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Formun ustunun sonu-->
+<!--Form Hissesi-->
+<!--name ve email formu-->
+<section class="form-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" method="POST">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control" name="name" placeholder="Adiniz *">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="email" class="form-control" name="email" placeholder="Email Addresiniz *">
+                                            </div>
+                                        </div>
+                    
+                                        <!--Name ve Email formunun sonu-->
+                                        <!--Phone Number ve country Formu-->
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <input type="number" class="form-control" name="phone" placeholder="Nomreniz *">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <select class="form-control"  name="" id="">
+                                                    <option value="Azerbaijan">Azərbaycan</option>
+
+                                                </select>
+                                            </div>
+                                        </div>                  
+                                        <!--Phone Number ve country Formunun sonu-->
+                                        <!--Subject hissesi-->
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <input type="text" class="form-control" name="product" placeholder="Mehsul *">
+                                            </div>
+                                        </div>
+                                        <!--Subject hissesinin sonu-->
+                                        <!--Textarea hissesi-->
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <textarea class="form-control"  rows="10" name="message" placeholder="Sualiniz"></textarea>
+                                                </div>
+                                            </div>
+                                        <!--Textarea hissesinin sonu-->
+                                        <!--Button hissesi-->
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12 text-center">
+                                                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane fa-2x"></i>Mesaj gonderin</button>
+                                            </div>
+                                        </div>
+                
+                                        <!--Button hissesinin sonu-->
+                                    </div>
+                </form>
+
+
+
+
+
+
+
+
+
+<!--2-ci hissse-->
+        <div class="col-md-6 address">
+            <h5>Bizə Zəng Edin /WhatsApp</h5>
+            <p><a href="tel:+994(55)3736101"><i class="fas fa-phone"></i>+(994)553736101</a><br></p>
+            <h5>Email/VebSayt</h5>
+            <p>
+                <a href="mailto:simplesnippetsinfo@gmail.com"><i class="fas fa-envelope"></i>simplesnippetsinfo@gmail.com</a><br>
+                <a href="https://simplesnippets.tech/"><i class="fas fa-globe"></i></i>www.simplesnippets.tech</a>
+            </p>
+            <h5>Iş Saatları</h5>
+            <p>
+                B.e-C:9:00-21:00
+            </p>
+            <h5>Adresimiz</h5>
+            <p>
+               Ceyhun Hacıbəyli Küçəsi 158A
+            </p>
+
+        </div>
+<!--2-ci hissenin sonu-->
+</section>
+<!--Form Hissesinin sonu-->
+<!--Xerite hissesi-->
+<section>
+<!--2-ci hissenin sonu-->
+</section>
+<!--Form Hissesinin sonu-->
+<!--Xerite hissesi-->
+<section>
+    <div class="container-fluid">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507.3527635844292!2d49.844064291108076!3d40.39498557604565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6fec67da97%3A0x3857771ef7c8b832!2zQ2V5aHVuYsmZeSBIYWPEsWLJmXlsaSwgQmFrxLEsIEF6yZlyYmF5Y2Fu!5e1!3m2!1saz!2s!4v1606413756173!5m2!1saz!2s" width="100%" height="300" frameborder="0"></iframe>
+    </div>
+</section>
+<!--Xerite hissesinin sonu-->
+<!--End of Contact US-->
+{% endblock %}
