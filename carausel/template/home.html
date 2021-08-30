@@ -1,0 +1,403 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather:ital,wght@0,700;1,900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <title>Ana Səhifə</title>
+  </head>
+  <body>
+  <!-- Navbar -->
+<section id="navbarr">
+    <nav>
+        <ul>
+            <li class="logo">PragmaBuild</a></li>
+            <div class="items">
+                <li><a href="{% url 'home' %}">Ana Səhifə</a></li>
+                <li><a href="{% url 'about' %}">Haqqımızda</a></li>
+                <li><a href="{% url 'contact' %}">Əlaqə</a></li>
+            </div>
+            <li class="search-icon">
+                <input type="search" placeholder="Search">
+                <label class="icon">
+                    <span class="fas fa-search"></span>
+                </label>
+            </li>
+        </ul>
+    </nav>
+</section>
+  <!--End of Navbar -->
+<!--Slider-->
+<section id="main">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+      <li type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+      <li type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+    </ol>
+      <div class="carousel-inner">
+          {% for object in obj %}
+          <div class="carousel-item {% if forloop.first %} active {% endif %}">
+            <img src="{{object.image.url}} " class="img-fluid d-block w-100" style="height: 600px"  alt="{{object.id}} obj ">
+              <div class="container">
+                  <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                      <h1 class="animate__animated 
+                      {% if forloop.counter0 == 0 %}
+                      animate__lightSpeedInRight
+                      {% endif %}
+                      {% if forloop.revcounter == 1 %}
+                      animate__zoomInDown
+                      {% endif %}
+                      {% if forloop.revcounter == 2 %}
+                      animate__slideInLeft
+                      {% endif %}
+                      ">{{object.title}}</h1>
+                      <h3 class = "animate__animated 
+                      {% if forloop.counter0 == 0 %}
+                      animate__heartBeat
+                      {% endif %}
+                      {% if forloop.revcounter == 1 %}
+                      animate__fadeInUp
+                      {% endif %}
+                      {% if forloop.revcounter == 2 %}
+                      animate__swing
+                      {% endif %}
+                      ">{{object.sub_title}}</h3>
+                      <a href="
+                      {% if forloop.counter0 == 0 %}
+                      {% url 'contact'%}
+                      {% endif %}
+                      {% if forloop.revcounter == 1 %}
+                      {% url 'contact' %}
+                      {% endif %}
+                      {% if forloop.revcounter == 2 %}
+                      {% url 'about' %}
+                      {% endif %}
+                      " class="btn btn-color slide-btn btn-lg">
+                          {{object.button}}
+                      </a>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  </div>
+</section>
+<!--End of Slider-->
+<!--Service Section-->
+<section class="services py-5 text-center">
+    <div class="container">
+        <div class="row">
+        <!--Single Service-->
+            <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+                <span class="service-icon">
+                    <i class="fa fa-thumbs-up fa-2x"></i>
+                </span>
+                <h5 class="font-weight-bold text-uppercase">
+                    Əla Keyfiyyət
+                </h5>
+                <p class="text-capitalize">Onlayn mağazamız uzun illərdir tanınmış istehlakçıların mallarını satır</p>
+            </div>
+        <!--End of Single Service-->
+        <!--Single Service-->
+            <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+                <span class="service-icon">
+                    <i class="fa fa-credit-card fa-2x"></i>
+                </span>
+                <h5 class="font-weight-bold text-uppercase">
+                    Asan Ödəmə
+                </h5>
+                <p class="text-capitalize">Müştəri güvənliliyi bizim Üçün əhəmiyyətli olduğundan ödəniş mağazamızda həyata keçirilir</p>
+            </div>
+        <!--End of Single Service-->
+        <!--Single Service-->
+            <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+                <span class="service-icon">
+                    <i class="fas fa-truck fa-2x"></i>
+                </span>
+                <h5 class="font-weight-bold text-uppercase">
+                    Çatdırılma
+                </h5>
+                <p class="text-capitalize">Tikinti Materiallarının çatdırılmasını təmin edirik</p>
+            </div>
+        <!--End of Single Service-->
+        </div>
+    </div>
+</section>
+<!--End of Service Section-->
+<section id="products" class="products py-5">
+    <div class="container">
+        <!--Section title-->
+        <div class="row">
+            <div class="col-10 mx-auto col-sm-6 text-center">
+                <h1 class="text-capitalize product-title">
+                    Məhsullarımız
+                </h1>
+            </div>
+        </div>
+        <!--End of SEction title-->
+        <!--Products Items-->
+        <div class="row product-items" id="product-items">
+            <!--Single Item-->
+            <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src=""  alt="" class="card-img-top product-img" >
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="item-name">19*19*29</h5>
+                            <span><i class="fas fa-dollar-sign"></i> 0.47</span>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of Single Item-->
+             <!--Single Item-->
+             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src="" alt="" class="card-img-top product-img">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="item-name">19*19*13</h5>
+                            <span><i class="fas fa-dollar-sign"></i>0.26</span>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of Single Item-->
+             <!--Single Item-->
+             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src="" alt="" class="card-img-top product-img">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="item-name">19*19*10</h5>
+                            <span><i class="fas fa-dollar-sign"></i>0.26</span>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of Single Item-->
+             <!--Single Item-->
+             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src=""  alt="" class="card-img-top product-img" >
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="item-name">19*19*29</h5>
+                            <span><i class="fas fa-dollar-sign"></i> 0.47</span>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of Single Item-->
+             <!--Single Item-->
+             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src=""  alt="" class="card-img-top product-img" >
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="item-name">19*19*29</h5>
+                            <span><i class="fas fa-dollar-sign"></i> 0.47</span>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of Single Item-->
+             <!--Single Item-->
+             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                <div class="card single-item">
+                    <div class="img-container">
+                        <img src=""  alt="" class="card-img-top product-img" >
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="item-name">19*19*29</h5>
+                            <span><i class="fas fa-dollar-sign"></i> 0.47</span>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of Single Item-->
+        </div>
+        <!--End of Product Items-->
+    </div>
+</section>
+<!--About Section-->
+<section id="about-sec">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 text-center">
+                <img src="" width="450" height="150" class="img-fluid watch-img">
+                
+            </div>
+            <div class="col-lg-7 text-lg-right text-center text-color about-text">
+                <h1>Mağazamız Haqqında</h1>
+                <p class="text">Mağazamız 2002-ci ilindən fəalliyat göstərir.Mağazamızda hər cür tikinti materialları bazar qiymetindən qat-qat aşağı qiymətə satılır.Mağazamızda satılan malların kiçik bir hissəsi sayta yerləşdirilib.Mağaza Nəsimi Bazarının yaxınlığında yerləşir.Ətraflı məlumat Haqqımızda səhifəsində</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End of About Section-->
+<!--Best Seller Section-->
+<section class="seller py-5">
+    <div class="container">
+            <!--Section title-->
+            <div class="row">
+            <div class="col-10 mx-auto col-sm-6 text-center">
+                <h1 class="text-capitalize product-title">
+                    Ən Çox Satılan Mallarımız
+                </h1>
+            </div>
+        </div>
+        <!--End of Section title-->
+        <!--Row-->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="seller-item">
+                    <img src="" alt="" class="img-fluid photo">
+                    
+                    <p></p>
+                </div>
+            </div>
+            <!--End of col-->
+            <div class="col-sm-6 d-flex flex-column justify-content-between">
+                <!--Row-->
+                <div class="row">
+                    <!--img-1-->
+                    <div class="col-sm-6">
+                        <div class="seller-item">
+                            <img src="" alt="" class="img-fluid seller-img">
+                            
+                            <p></p>
+                        </div>
+                    </div>
+                    <!--End of img-1-->
+                    <!--img-2-->
+                    <div class="col-sm-6">
+                        <div class="seller-item">
+                            <img src="" alt="" class="img-fluid seller-img">
+                            
+                            <p></p>
+                        </div>
+                    </div>
+                    <!--End of img-2-->
+                </div>
+                <!--End of Row-->
+                <div class="row">
+                    <!--img-3-->
+                    <div class="col-sm-6">
+                        <div class="seller-item">
+                            <img src="" alt="" class="img-fluid seller-img img-top">
+                            
+                            <p></p>
+                        </div>
+                    </div>
+                    <!--End of img-3-->
+                    <!--img-4-->
+                    <div class="col-sm-6">
+                        <div class="seller-item">
+                            <img src="" alt="" class="img-fluid seller-img img-top">
+                            
+                            <p></p>
+                        </div>
+                    </div>
+                    <!--End of img-4-->
+                </div>
+            </div>
+        </div>
+        <!--End of Row-->
+    </div>
+</section>
+<!--End of Best Seller Section-->
+<!--'Contact' us-->
+<section class="'Contact' py-5">
+    <div class="container">
+        <h2 class="section-heading text-center">Bizimlə Əlaqə</h2>
+        <form class="col-lg-6 offset-lg-3">
+            <div class="form-group">
+                <label for="email">Email Adresiniz</label>
+                <input type="email" id="email" class="form-control" aria-describedby="emailHelp"placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="name">Adınız</label>
+                <input type="text" id="name" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="message">Mesajınız</label>
+                <textarea class="form-control" id="message" placeholder="Message"
+                row="5"></textarea>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="check"
+                <label class="form-check-label" for="check">
+                    Yadda Saxla
+                </label>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-lg btn-color cont-btn">
+                    Göndərin
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<!--End of 'Contact' us-->
+<!--Footer Hissesi-->
+<footer class="footer mt-5">
+    <div class="text-center py-5">
+        <h2 class="py-3">PragmaBuild Mağazalar Şəbəkəsi</h2>
+        <div class="mx-auto heading-line"></div>
+    </div>
+    <div class="container">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <p>Hər Hansı Bir Sual yaranarsa qeyd olunan nömrələrə zəng və ya mesaj  saat:08:00-21:00-də yaza bilərsiniz.</p>
+                        <p>Bizi Seçdiyiniz Üçün Təşəkkür edirik!!!
+                    <div class="justify-content-center">
+                        <i class="fab fa-facebook fa-2x"></i>
+                        <i class="fab fa-twitter fa-2x"></i>
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright text-center py-3 border-top text-light">
+                <p>&copy; Copy Right By PragmaBuild</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--End of Footer-->
+
+    <script src="https://kit.fontawesome.com/ec635ca473.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+ </body>
+</html>
