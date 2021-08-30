@@ -157,94 +157,21 @@
         <!--Products Items-->
         <div class="row product-items" id="product-items">
             <!--Single Item-->
+            {% for product in products %}
             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
                 <div class="card single-item">
                     <div class="img-container">
-                        <img src=""  alt="" class="card-img-top product-img" >
+                        <img src="{{product.product_image.url}}"  alt="product-image-1" class="card-img-top product-img" >
                     </div>
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="item-name">19*19*29</h5>
-                            <span><i class="fas fa-dollar-sign"></i> 0.47</span>   
+                            <h5 id="item-name">{{product.product_name}}</h5>
+                            <span><i class="fas fa-dollar-sign"></i>{{product.product_price}}</span>   
                         </div>
                     </div>
                 </div>
             </div>
-            <!--End of Single Item-->
-             <!--Single Item-->
-             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                <div class="card single-item">
-                    <div class="img-container">
-                        <img src="" alt="" class="card-img-top product-img">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="item-name">19*19*13</h5>
-                            <span><i class="fas fa-dollar-sign"></i>0.26</span>   
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End of Single Item-->
-             <!--Single Item-->
-             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                <div class="card single-item">
-                    <div class="img-container">
-                        <img src="" alt="" class="card-img-top product-img">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="item-name">19*19*10</h5>
-                            <span><i class="fas fa-dollar-sign"></i>0.26</span>   
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End of Single Item-->
-             <!--Single Item-->
-             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                <div class="card single-item">
-                    <div class="img-container">
-                        <img src=""  alt="" class="card-img-top product-img" >
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="item-name">19*19*29</h5>
-                            <span><i class="fas fa-dollar-sign"></i> 0.47</span>   
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End of Single Item-->
-             <!--Single Item-->
-             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                <div class="card single-item">
-                    <div class="img-container">
-                        <img src=""  alt="" class="card-img-top product-img" >
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="item-name">19*19*29</h5>
-                            <span><i class="fas fa-dollar-sign"></i> 0.47</span>   
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End of Single Item-->
-             <!--Single Item-->
-             <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                <div class="card single-item">
-                    <div class="img-container">
-                        <img src=""  alt="" class="card-img-top product-img" >
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="item-name">19*19*29</h5>
-                            <span><i class="fas fa-dollar-sign"></i> 0.47</span>   
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
             <!--End of Single Item-->
         </div>
         <!--End of Product Items-->
@@ -255,7 +182,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5 text-center">
-                <img src="" width="450" height="150" class="img-fluid watch-img">
+                <img src="{{products_about.product_image.url}}" width="450" height="150" class="img-fluid watch-img">
                 
             </div>
             <div class="col-lg-7 text-lg-right text-center text-color about-text">
@@ -282,7 +209,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="seller-item">
-                    <img src="" alt="" class="img-fluid photo">
+                    <img src="{{products_best_seller2.product_image.url}}" alt="" class="img-fluid photo">
                     
                     <p></p>
                 </div>
@@ -294,7 +221,7 @@
                     <!--img-1-->
                     <div class="col-sm-6">
                         <div class="seller-item">
-                            <img src="" alt="" class="img-fluid seller-img">
+                            <img src="{{products_best_seller.product_image.url}}" alt="" class="img-fluid seller-img">
                             
                             <p></p>
                         </div>
@@ -303,7 +230,7 @@
                     <!--img-2-->
                     <div class="col-sm-6">
                         <div class="seller-item">
-                            <img src="" alt="" class="img-fluid seller-img">
+                            <img src="{{products_best_seller1.product_image.url}}" alt="" class="img-fluid seller-img">
                             
                             <p></p>
                         </div>
@@ -315,7 +242,7 @@
                     <!--img-3-->
                     <div class="col-sm-6">
                         <div class="seller-item">
-                            <img src="" alt="" class="img-fluid seller-img img-top">
+                            <img src="{{products_best_seller2.product_image.url}}" alt="" class="img-fluid seller-img img-top">
                             
                             <p></p>
                         </div>
@@ -324,7 +251,7 @@
                     <!--img-4-->
                     <div class="col-sm-6">
                         <div class="seller-item">
-                            <img src="" alt="" class="img-fluid seller-img img-top">
+                            <img src="{{products_best_seller2.product_image.url}}" alt="" class="img-fluid seller-img img-top">
                             
                             <p></p>
                         </div>
